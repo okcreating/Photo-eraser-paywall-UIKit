@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C641109C2CE51C0A0058D224 /* Paywall Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109B2CE51C0A0058D224 /* Paywall Model.swift */; };
+		C641109E2CE51C160058D224 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109D2CE51C160058D224 /* PaywallView.swift */; };
 		C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539412CE4CF5E0080492C /* AppDelegate.swift */; };
 		C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539432CE4CF5E0080492C /* SceneDelegate.swift */; };
-		C64539462CE4CF5E0080492C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539452CE4CF5E0080492C /* ViewController.swift */; };
-		C64539492CE4CF5E0080492C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C64539482CE4CF5E0080492C /* Base */; };
+		C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539452CE4CF5E0080492C /* PaywallViewController.swift */; };
 		C645394B2CE4CF5F0080492C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645394A2CE4CF5F0080492C /* Assets.xcassets */; };
 		C645394E2CE4CF5F0080492C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C645394D2CE4CF5F0080492C /* Base */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C641109B2CE51C0A0058D224 /* Paywall Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paywall Model.swift"; sourceTree = "<group>"; };
+		C641109D2CE51C160058D224 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		C645393E2CE4CF5E0080492C /* phoro eraser paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "phoro eraser paywall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64539412CE4CF5E0080492C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64539432CE4CF5E0080492C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C64539452CE4CF5E0080492C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C64539482CE4CF5E0080492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C64539452CE4CF5E0080492C /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
 		C645394A2CE4CF5F0080492C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645394D2CE4CF5F0080492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645394F2CE4CF5F0080492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +58,40 @@
 		C64539402CE4CF5E0080492C /* phoro eraser paywall */ = {
 			isa = PBXGroup;
 			children = (
+				C64539552CE4EF2A0080492C /* App */,
+				C64539562CE4EF310080492C /* Sources */,
+				C64539572CE4EF3F0080492C /* Resources */,
+			);
+			path = "phoro eraser paywall";
+			sourceTree = "<group>";
+		};
+		C64539552CE4EF2A0080492C /* App */ = {
+			isa = PBXGroup;
+			children = (
 				C64539412CE4CF5E0080492C /* AppDelegate.swift */,
 				C64539432CE4CF5E0080492C /* SceneDelegate.swift */,
-				C64539452CE4CF5E0080492C /* ViewController.swift */,
-				C64539472CE4CF5E0080492C /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C64539562CE4EF310080492C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
+				C641109B2CE51C0A0058D224 /* Paywall Model.swift */,
+				C641109D2CE51C160058D224 /* PaywallView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C64539572CE4EF3F0080492C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				C645394A2CE4CF5F0080492C /* Assets.xcassets */,
 				C645394C2CE4CF5F0080492C /* LaunchScreen.storyboard */,
 				C645394F2CE4CF5F0080492C /* Info.plist */,
 			);
-			path = "phoro eraser paywall";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +154,6 @@
 			files = (
 				C645394B2CE4CF5F0080492C /* Assets.xcassets in Resources */,
 				C645394E2CE4CF5F0080492C /* Base in Resources */,
-				C64539492CE4CF5E0080492C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64539462CE4CF5E0080492C /* ViewController.swift in Sources */,
+				C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */,
+				C641109C2CE51C0A0058D224 /* Paywall Model.swift in Sources */,
+				C641109E2CE51C160058D224 /* PaywallView.swift in Sources */,
 				C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */,
 				C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C64539472CE4CF5E0080492C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C64539482CE4CF5E0080492C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C645394C2CE4CF5F0080492C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,6 +238,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_COMPILER_AUTO_ACTIVATE_CUSTOM_FONTS = NO;
+				IBSC_ERRORS = NO;
+				IBSC_FLATTEN_NIBS = NO;
+				IBSC_NOTICES = NO;
+				IBSC_WARNINGS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -275,6 +300,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_COMPILER_AUTO_ACTIVATE_CUSTOM_FONTS = NO;
+				IBSC_ERRORS = NO;
+				IBSC_FLATTEN_NIBS = NO;
+				IBSC_NOTICES = NO;
+				IBSC_WARNINGS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -294,12 +324,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8ZNYNGYWA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "phoro eraser paywall/Info.plist";
+				INFOPLIST_FILE = "phoro eraser paywall/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +337,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "okcreating.phoro-eraser-paywall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,12 +355,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q8ZNYNGYWA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "phoro eraser paywall/Info.plist";
+				INFOPLIST_FILE = "phoro eraser paywall/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +368,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "okcreating.phoro-eraser-paywall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
