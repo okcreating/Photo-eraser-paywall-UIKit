@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C641109C2CE51C0A0058D224 /* Paywall Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109B2CE51C0A0058D224 /* Paywall Model.swift */; };
+		C641109C2CE51C0A0058D224 /* PaywallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109B2CE51C0A0058D224 /* PaywallModel.swift */; };
 		C641109E2CE51C160058D224 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109D2CE51C160058D224 /* PaywallView.swift */; };
 		C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539412CE4CF5E0080492C /* AppDelegate.swift */; };
 		C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539432CE4CF5E0080492C /* SceneDelegate.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C641109B2CE51C0A0058D224 /* Paywall Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Paywall Model.swift"; sourceTree = "<group>"; };
+		C641109B2CE51C0A0058D224 /* PaywallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallModel.swift; sourceTree = "<group>"; };
 		C641109D2CE51C160058D224 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		C645393E2CE4CF5E0080492C /* phoro eraser paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "phoro eraser paywall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64539412CE4CF5E0080492C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
-				C641109B2CE51C0A0058D224 /* Paywall Model.swift */,
+				C641109B2CE51C0A0058D224 /* PaywallModel.swift */,
 				C641109D2CE51C160058D224 /* PaywallView.swift */,
 			);
 			path = Sources;
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */,
-				C641109C2CE51C0A0058D224 /* Paywall Model.swift in Sources */,
+				C641109C2CE51C0A0058D224 /* PaywallModel.swift in Sources */,
 				C641109E2CE51C160058D224 /* PaywallView.swift in Sources */,
 				C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */,
 				C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */,
@@ -243,7 +243,7 @@
 				IBSC_FLATTEN_NIBS = NO;
 				IBSC_NOTICES = NO;
 				IBSC_WARNINGS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -305,7 +305,7 @@
 				IBSC_FLATTEN_NIBS = NO;
 				IBSC_NOTICES = NO;
 				IBSC_WARNINGS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
