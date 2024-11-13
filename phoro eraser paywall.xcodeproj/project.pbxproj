@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C641109C2CE51C0A0058D224 /* PaywallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109B2CE51C0A0058D224 /* PaywallModel.swift */; };
 		C641109E2CE51C160058D224 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109D2CE51C160058D224 /* PaywallView.swift */; };
+		C64110A02CE534E40058D224 /* TariffOptionCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C641109F2CE534E40058D224 /* TariffOptionCelll.swift */; };
 		C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539412CE4CF5E0080492C /* AppDelegate.swift */; };
 		C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539432CE4CF5E0080492C /* SceneDelegate.swift */; };
 		C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539452CE4CF5E0080492C /* PaywallViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		C641109B2CE51C0A0058D224 /* PaywallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallModel.swift; sourceTree = "<group>"; };
 		C641109D2CE51C160058D224 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		C641109F2CE534E40058D224 /* TariffOptionCelll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TariffOptionCelll.swift; sourceTree = "<group>"; };
 		C645393E2CE4CF5E0080492C /* phoro eraser paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "phoro eraser paywall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64539412CE4CF5E0080492C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64539432CE4CF5E0080492C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
+				C641109F2CE534E40058D224 /* TariffOptionCelll.swift */,
 				C641109B2CE51C0A0058D224 /* PaywallModel.swift */,
 				C641109D2CE51C160058D224 /* PaywallView.swift */,
 			);
@@ -169,6 +172,7 @@
 				C641109E2CE51C160058D224 /* PaywallView.swift in Sources */,
 				C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */,
 				C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */,
+				C64110A02CE534E40058D224 /* TariffOptionCelll.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
