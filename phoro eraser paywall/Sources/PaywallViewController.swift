@@ -14,5 +14,9 @@ class PaywallViewController: UIViewController {
         super.viewDidLoad()
 
     }
+
+    private func changeBuyButtonText() -> String {
+        
+    }
 }
 
