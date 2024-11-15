@@ -27,26 +27,23 @@ class PaywallView: UIView {
         return label
     }()
 
-    lazy var advantagesCollection: UICollectionView = {
-        let collection = UICollectionView()
-       // collection.dataSource = self
-        translatesAutoresizingMaskIntoConstraints = false
-        return collection
-    }()
+    var advantagesCollection: UICollectionView? //= {
+//        let collection = UICollectionView()
+//        translatesAutoresizingMaskIntoConstraints = false
+//        return collection
+//    }()
 
     lazy var tariffsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
-//        tableView.dataSource = self
-//        tableView.delegate = self
         return tableView
     }()
 
     lazy var buyButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
         button.layer.cornerRadius = 10
-        button.titleLabel?.text = 
+       // button.titleLabel?.text =
         return button
     }()
 
