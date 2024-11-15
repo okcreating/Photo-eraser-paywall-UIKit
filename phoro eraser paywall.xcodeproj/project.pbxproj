@@ -81,11 +81,10 @@
 		C64539562CE4EF310080492C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
-				C641109F2CE534E40058D224 /* TariffOptionCelll.swift */,
-				C6505CD02CE766D500548207 /* FeatureCell.swift */,
 				C641109B2CE51C0A0058D224 /* PaywallModel.swift */,
 				C641109D2CE51C160058D224 /* PaywallView.swift */,
+				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
+				C6508F602CE7C3C400CE282B /* Cells */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -98,6 +97,15 @@
 				C645394F2CE4CF5F0080492C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6508F602CE7C3C400CE282B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C641109F2CE534E40058D224 /* TariffOptionCelll.swift */,
+				C6505CD02CE766D500548207 /* FeatureCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

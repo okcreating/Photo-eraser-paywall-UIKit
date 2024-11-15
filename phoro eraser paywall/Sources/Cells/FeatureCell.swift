@@ -19,11 +19,13 @@ final class FeatureCell: UICollectionViewCell {
 
     private var tickIcon: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Tick"))
+        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
     private var advantageLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 

@@ -23,16 +23,19 @@ final class TariffCell: UITableViewCell {
 
     private var durationLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private var priceLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private var savingLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -41,6 +44,7 @@ final class TariffCell: UITableViewCell {
         stack.alignment = .leading
         stack.axis = .vertical
         stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
 
