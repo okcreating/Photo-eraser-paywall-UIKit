@@ -15,7 +15,7 @@ class PaywallView: UIView {
         let image = UIImageView()
         image.image = UIImage(named: "Paywall Image")
         image.contentMode = .scaleAspectFit
-        translatesAutoresizingMaskIntoConstraints = false
+        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -23,12 +23,13 @@ class PaywallView: UIView {
         let label = UILabel()
         label.text = "Unlock all features"
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    var advantagesCollection: UICollectionView = {
-        let collection = UICollectionView()
+    var featuresCollection: UICollectionView = {
+   
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout.init())
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -43,7 +44,7 @@ class PaywallView: UIView {
     lazy var buyButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
         button.layer.cornerRadius = 10
-       // button.titleLabel?.text =
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -63,26 +64,32 @@ class PaywallView: UIView {
     // MARK: - Setups
 
     private func setupHierarchy() {
+        addSubview(image)
+        addSubview(title)
+        addSubview(featuresCollection)
         addSubview(tariffsTableView)
+        addSubview(buyButton)
     }
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            image.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             image.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             image.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
 
             title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
             title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
 
-            advantagesCollection.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-            advantagesCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            advantagesCollection.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            featuresCollection.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
+            featuresCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            featuresCollection.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
 
-            tariffsTableView.topAnchor.constraint(equalTo: advantagesCollection.bottomAnchor, constant: 10),
+            tariffsTableView.topAnchor.constraint(equalTo: featuresCollection.bottomAnchor, constant: 10),
             tariffsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tariffsTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-           // tariffsTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+
+            buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10)
+
         ])
     }
 }

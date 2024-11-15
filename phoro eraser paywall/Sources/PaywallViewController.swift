@@ -19,9 +19,10 @@ class PaywallViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        view = PaywallView()
         super.viewDidLoad()
         tafiffsModel = SubscriptionOptions()
-        view = PaywallView()
+        featuresModel = Features()
         configureAdvantagesCollection()
         configureTariffsTableView()
     }
@@ -37,11 +38,10 @@ private extension PaywallViewController {
         layout.itemSize = CGSize(width: view.frame.width / 2.2, height: 44)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
-        paywallView.advantagesCollection.frame = .zero
-        paywallView.advantagesCollection.collectionViewLayout = layout
-        paywallView.advantagesCollection.register(FeatureCell.self, forCellWithReuseIdentifier: FeatureCell.identifier)
-        paywallView.advantagesCollection.dataSource = self
-        paywallView.advantagesCollection.isUserInteractionEnabled = false
+        paywallView.featuresCollection.collectionViewLayout = layout
+        paywallView.featuresCollection.register(FeatureCell.self, forCellWithReuseIdentifier: FeatureCell.identifier)
+        paywallView.featuresCollection.dataSource = self
+        paywallView.featuresCollection.isUserInteractionEnabled = false
     }
 
     func configureTariffsTableView() {
