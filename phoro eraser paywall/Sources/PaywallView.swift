@@ -27,11 +27,11 @@ class PaywallView: UIView {
         return label
     }()
 
-    var advantagesCollection: UICollectionView? //= {
-//        let collection = UICollectionView()
-//        translatesAutoresizingMaskIntoConstraints = false
-//        return collection
-//    }()
+    var advantagesCollection: UICollectionView = {
+        let collection = UICollectionView()
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
 
     lazy var tariffsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)

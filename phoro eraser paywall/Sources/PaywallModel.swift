@@ -26,12 +26,23 @@ enum SavingPercentage: String {
     case seventy = "save 70%"
 }
 
+enum Feature: String {
+    case removeObjects = "Remove Objects"
+    case resizePhoto = "Resize photo"
+    case eraseObjects = "Erase objects"
+    case noAds = "No ads"
+}
+
 // MARK: Model
 
 struct Tariff {
     var subscriptionDuration: SubscriptionDurations
     var price: Prices
     var savingPercentage: SavingPercentage?
+}
+
+struct FeatureContent {
+    var text: Feature
 }
 
 // MARK: Building Model
@@ -42,6 +53,16 @@ final class SubscriptionOptions {
             Tariff(subscriptionDuration: .trial, price: .week),
             Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty),
             Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)
+        ]
+    }
+}
+
+final class Features {
+    func getFeatures() -> [FeatureContent] {
+        return [FeatureContent(text: .removeObjects),
+                FeatureContent(text: .resizePhoto),
+                FeatureContent(text: .eraseObjects),
+                FeatureContent(text: .noAds)
         ]
     }
 }
