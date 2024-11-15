@@ -15,6 +15,7 @@
 		C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539452CE4CF5E0080492C /* PaywallViewController.swift */; };
 		C645394B2CE4CF5F0080492C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645394A2CE4CF5F0080492C /* Assets.xcassets */; };
 		C645394E2CE4CF5F0080492C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C645394D2CE4CF5F0080492C /* Base */; };
+		C6505CD12CE766D500548207 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6505CD02CE766D500548207 /* FeatureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C645394A2CE4CF5F0080492C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645394D2CE4CF5F0080492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645394F2CE4CF5F0080492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6505CD02CE766D500548207 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
 				C641109F2CE534E40058D224 /* TariffOptionCelll.swift */,
+				C6505CD02CE766D500548207 /* FeatureCell.swift */,
 				C641109B2CE51C0A0058D224 /* PaywallModel.swift */,
 				C641109D2CE51C160058D224 /* PaywallView.swift */,
 			);
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */,
+				C6505CD12CE766D500548207 /* FeatureCell.swift in Sources */,
 				C641109C2CE51C0A0058D224 /* PaywallModel.swift in Sources */,
 				C641109E2CE51C160058D224 /* PaywallView.swift in Sources */,
 				C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */,

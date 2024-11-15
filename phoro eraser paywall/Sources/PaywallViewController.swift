@@ -10,7 +10,8 @@ import UIKit
 
 class PaywallViewController: UIViewController {
 
-    var model: SubscriptionOptions?
+    var featuresModel: Features?
+    var tafiffsModel: SubscriptionOptions?
 
     private weak var paywallView: PaywallView! {
         guard isViewLoaded else { return nil }
@@ -19,24 +20,28 @@ class PaywallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = SubscriptionOptions()
+        tafiffsModel = SubscriptionOptions()
         view = PaywallView()
         configureAdvantagesCollection()
         configureTariffsTableView()
     }
 
-    private func changeBuyButtonText() -> String {
-        
-    }
+//    private func changeBuyButtonText() -> String {
+//        
+//    }
 }
 
 private extension PaywallViewController {
     func configureAdvantagesCollection() {
         let layout = UICollectionViewFlowLayout()
-        paywallView.advantagesCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        paywallView.advantagesCollection.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
-        paywallView.advantagesCollection?.dataSource = self
-        paywallView.advantagesCollection?.isUserInteractionEnabled = false
+        layout.itemSize = CGSize(width: view.frame.width / 2.2, height: 44)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        paywallView.advantagesCollection.frame = .zero
+        paywallView.advantagesCollection.collectionViewLayout = layout
+        paywallView.advantagesCollection.register(FeatureCell.self, forCellWithReuseIdentifier: FeatureCell.identifier)
+        paywallView.advantagesCollection.dataSource = self
+        paywallView.advantagesCollection.isUserInteractionEnabled = false
     }
 
     func configureTariffsTableView() {
@@ -47,8 +52,9 @@ private extension PaywallViewController {
 }
 
 extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model?.buildTariffs().count ?? 0
+        tafiffsModel?.buildTariffs().count ?? 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,23 +62,27 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = model?.buildTariffs()[indexPath.row]
+        let model = tafiffsModel?.buildTariffs()[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
         cell?.tariff = model
+        return cell ?? TariffCell()
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }
 
 extension PaywallViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        featuresModel?.getFeatures().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let model = featuresModel?.getFeatures()[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureCell.identifier, for: indexPath) as? FeatureCell
+        cell?.feature = model
+        return cell ?? FeatureCell()
     }
     
 
