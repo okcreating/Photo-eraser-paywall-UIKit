@@ -35,7 +35,7 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 private extension PaywallViewController {
     func configureAdvantagesCollection() {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 170, height: 40)
+        layout.estimatedItemSize = CGSize(width: 160, height: 40)
         layout.minimumLineSpacing = 7
         layout.minimumInteritemSpacing = 7
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

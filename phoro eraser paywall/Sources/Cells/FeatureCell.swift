@@ -20,7 +20,7 @@ final class FeatureCell: UICollectionViewCell {
     private var tickIcon: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Tick"))
         image.contentMode = .scaleAspectFit
-     //   image.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+     image.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         image.clipsToBounds = true
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -30,9 +30,17 @@ final class FeatureCell: UICollectionViewCell {
     private var advantageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        //label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+
+    private var stack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .leading
+        stack.distribution = .equalSpacing
+        return stack
     }()
 
     // MARK: - Initializers
@@ -49,24 +57,33 @@ final class FeatureCell: UICollectionViewCell {
     }
 
     private func setupHierarchy() {
-        addSubview(tickIcon)
-        addSubview(advantageLabel)
+//        addSubview(tickIcon)
+//        addSubview(advantageLabel)
+
+        stack.addSubview(tickIcon)
+        stack.addSubview(advantageLabel)
+        addSubview(stack)
     }
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
 
-            tickIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            tickIcon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            tickIcon.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
+            tickIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 //            tickIcon.widthAnchor.constraint(equalToConstant: 30),
 //            tickIcon.heightAnchor.constraint(equalToConstant: 30),
-            tickIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
-            tickIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            tickIcon.topAnchor.constraint(equalTo: stack.topAnchor),
+//            tickIcon.bottomAnchor.constraint(equalTo: stack.bottomAnchor),
 
             advantageLabel.leadingAnchor.constraint(equalTo: tickIcon.trailingAnchor, constant: 5),
-          // advantageLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            advantageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            advantageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+          advantageLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//            advantageLabel.topAnchor.constraint(equalTo: stack.topAnchor, constant: 5),
+//            advantageLabel.bottomAnchor.constraint(equalTo: stack.bottomAnchor, constant: -5),
+
+            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
