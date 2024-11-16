@@ -29,8 +29,8 @@ class PaywallView: UIView {
     }()
 
     var featuresCollection: UICollectionView = {
-   
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout.init())
+        let collection = UICollectionView(frame: .infinite, collectionViewLayout: UICollectionViewLayout.init())
+
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -83,8 +83,12 @@ class PaywallView: UIView {
             title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
             featuresCollection.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-            featuresCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            featuresCollection.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+           // featuresCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            featuresCollection.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            featuresCollection.widthAnchor.constraint(equalTo: self.widthAnchor),
+            featuresCollection.heightAnchor.constraint(equalToConstant: 100),
+            //featuresCollection.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+//            featuresCollection.bottomAnchor.constraint(equalTo: tariffsTableView.topAnchor, constant: 5),
 
             tariffsTableView.topAnchor.constraint(equalTo: featuresCollection.bottomAnchor, constant: 10),
             tariffsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
