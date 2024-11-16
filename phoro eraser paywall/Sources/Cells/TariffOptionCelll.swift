@@ -51,7 +51,7 @@ final class TariffCell: UITableViewCell {
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
         setupHierarchy()
         setupLayout()

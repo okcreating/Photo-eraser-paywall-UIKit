@@ -19,6 +19,10 @@ final class FeatureCell: UICollectionViewCell {
 
     private var tickIcon: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Tick"))
+        image.contentMode = .scaleAspectFit
+     //   image.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        image.clipsToBounds = true
+        image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -26,6 +30,7 @@ final class FeatureCell: UICollectionViewCell {
     private var advantageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        //label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -51,11 +56,15 @@ final class FeatureCell: UICollectionViewCell {
     private func setupLayout() {
         NSLayoutConstraint.activate([
 
-            tickIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            tickIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            tickIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            tickIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            tickIcon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+//            tickIcon.widthAnchor.constraint(equalToConstant: 30),
+//            tickIcon.heightAnchor.constraint(equalToConstant: 30),
+            tickIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
+            tickIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
             advantageLabel.leadingAnchor.constraint(equalTo: tickIcon.trailingAnchor, constant: 5),
+          // advantageLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             advantageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             advantageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
