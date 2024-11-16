@@ -40,10 +40,10 @@ final class TariffCell: UITableViewCell {
     }()
 
     private var durationPriceStack: UIStackView = {
-        let stack = UIStackView()
+        let stack = UIStackView(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
         stack.alignment = .leading
         stack.axis = .vertical
-        stack.spacing = 12
+        stack.spacing = 5
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -65,9 +65,9 @@ final class TariffCell: UITableViewCell {
     // MARK: Setups
 
     private func setupHierarchy() {
+        addSubview(durationPriceStack)
         durationPriceStack.addSubview(durationLabel)
         durationPriceStack.addSubview(priceLabel)
-        addSubview(durationPriceStack)
         addSubview(savingLabel)
     }
 
@@ -83,7 +83,7 @@ final class TariffCell: UITableViewCell {
     }
 
     private func setupView() {
-        selectionStyle = .none
+        //selectionStyle = .none
         contentView.backgroundColor = !isSelected ? .systemPurple : .systemPink
         durationLabel.textColor = !isSelected ? .black : .white
         contentView.layer.cornerRadius = 10

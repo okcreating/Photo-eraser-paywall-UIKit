@@ -43,8 +43,11 @@ class PaywallView: UIView {
     }()
 
     lazy var buyButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
+        let button = UIButton()
         button.layer.cornerRadius = 10
+        button.tintColor = .white
+        button.backgroundColor = .blue
+        button.titleLabel?.text = "Try Free"
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -74,27 +77,28 @@ class PaywallView: UIView {
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
+
             image.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             image.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             image.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
 
             title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
-
             title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
             featuresCollection.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-           // featuresCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             featuresCollection.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             featuresCollection.widthAnchor.constraint(equalTo: self.widthAnchor),
             featuresCollection.heightAnchor.constraint(equalToConstant: 100),
-            //featuresCollection.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-//            featuresCollection.bottomAnchor.constraint(equalTo: tariffsTableView.topAnchor, constant: 5),
 
             tariffsTableView.topAnchor.constraint(equalTo: featuresCollection.bottomAnchor, constant: 10),
-            tariffsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            tariffsTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            tariffsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            tariffsTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tariffsTableView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            tariffsTableView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            tariffsTableView.heightAnchor.constraint(equalToConstant: 180),
 
-            buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10)
+            buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10),
+            buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
 
         ])
     }

@@ -50,6 +50,8 @@ private extension PaywallViewController {
         paywallView.tariffsTableView.register(TariffCell.self, forCellReuseIdentifier: TariffCell.identifier)
         paywallView.tariffsTableView.dataSource = self
         paywallView.tariffsTableView.delegate = self
+//        paywallView.tariffsTableView.estimatedRowHeight = 85
+//        paywallView.tariffsTableView.separatorInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
 }
 
@@ -57,7 +59,6 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        tafiffsModel?.buildTariffs().count ?? 0
-
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
