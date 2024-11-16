@@ -25,6 +25,7 @@ final class FeatureCell: UICollectionViewCell {
 
     private var advantageLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

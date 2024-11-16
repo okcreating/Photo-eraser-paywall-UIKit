@@ -22,7 +22,8 @@ class PaywallView: UIView {
     lazy var title: UILabel = {
         let label = UILabel()
         label.text = "Unlock all features"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -78,7 +79,8 @@ class PaywallView: UIView {
             image.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
 
             title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
-            title.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+
+            title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
             featuresCollection.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
             featuresCollection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
