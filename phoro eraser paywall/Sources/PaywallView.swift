@@ -44,10 +44,11 @@ class PaywallView: UIView {
 
     lazy var buyButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 6
         button.tintColor = .white
         button.backgroundColor = .systemIndigo
         button.setTitle("Try Free", for: .normal)
+        button.addTarget(self, action: #selector(PaywallViewController.buyButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -99,7 +100,8 @@ class PaywallView: UIView {
 
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10),
             buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buyButton.widthAnchor.constraint(equalToConstant: 180)
+            buyButton.widthAnchor.constraint(equalToConstant: 270),
+            buyButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

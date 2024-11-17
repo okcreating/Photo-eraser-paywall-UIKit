@@ -33,7 +33,7 @@ enum Feature: String {
     case noAds = "No ads"
 }
 
-// MARK: Model
+// MARK: Models
 
 struct Tariff {
     var subscriptionDuration: SubscriptionDurations
@@ -59,10 +59,11 @@ final class SubscriptionOptions {
 
 final class Features {
     func getFeatures() -> [FeatureContent] {
-        return [FeatureContent(text: .removeObjects),
-                FeatureContent(text: .resizePhoto),
-                FeatureContent(text: .eraseObjects),
-                FeatureContent(text: .noAds)
+        return [
+            FeatureContent(text: .removeObjects),
+            FeatureContent(text: .resizePhoto),
+            FeatureContent(text: .eraseObjects),
+            FeatureContent(text: .noAds)
         ]
     }
 }

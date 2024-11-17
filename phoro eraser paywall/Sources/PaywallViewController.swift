@@ -30,6 +30,9 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 //    private func changeBuyButtonText() -> String {
 //        
 //    }
+
+    @objc
+    func buyButtonPressed() {}
 }
 
 private extension PaywallViewController {
@@ -42,7 +45,6 @@ private extension PaywallViewController {
         paywallView.featuresCollection.collectionViewLayout = layout
         paywallView.featuresCollection.register(FeatureCell.self, forCellWithReuseIdentifier: FeatureCell.identifier)
         paywallView.featuresCollection.dataSource = self
-       // paywallView.featuresCollection.delegate = self
         paywallView.featuresCollection.isUserInteractionEnabled = false
     }
 
@@ -84,13 +86,11 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 extension PaywallViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         featuresModel?.getFeatures().count ?? 0
-
     }
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
-
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = featuresModel?.getFeatures()[indexPath.item]
@@ -99,7 +99,5 @@ extension PaywallViewController: UICollectionViewDataSource {
         cell?.feature = model
         return cell ?? FeatureCell()
     }
-    
-
 }
 
