@@ -99,7 +99,6 @@ class PaywallView: UIView {
 
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10),
             buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-
         ])
     }
 }

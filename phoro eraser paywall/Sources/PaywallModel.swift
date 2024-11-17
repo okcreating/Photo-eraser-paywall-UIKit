@@ -18,7 +18,7 @@ enum SubscriptionDurations: String {
 enum Prices: String {
     case week = "$4,99 per week"
     case month = "$12,99 per month"
-    case year = "£59,99 per year"
+    case year = "$59,99 per year"
 }
 
 enum SavingPercentage: String {
