@@ -44,10 +44,10 @@ class PaywallView: UIView {
 
     lazy var buyButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 5
         button.tintColor = .white
-        button.backgroundColor = .blue
-        button.titleLabel?.text = "Try Free"
+        button.backgroundColor = .systemIndigo
+        button.setTitle("Try Free", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -56,7 +56,7 @@ class PaywallView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-       // backgroundColor = UIColor(patternImage: UIImage(named: "back") ?? )
+       //backgroundColor = UIColor(patternImage: UIImage(named: "back") ?? )
         setupHierarchy()
         setupLayout()
     }
@@ -95,10 +95,11 @@ class PaywallView: UIView {
 //            tariffsTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             tariffsTableView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             tariffsTableView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            tariffsTableView.heightAnchor.constraint(equalToConstant: 180),
+            tariffsTableView.heightAnchor.constraint(equalToConstant: 200),
 
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10),
-            buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buyButton.widthAnchor.constraint(equalToConstant: 180)
         ])
     }
 }

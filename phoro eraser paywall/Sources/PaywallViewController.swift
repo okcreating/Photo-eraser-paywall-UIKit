@@ -72,6 +72,10 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
         return cell ?? TariffCell()
     }
 
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        60
+//    }
+
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        <#code#>
 //    }
@@ -91,6 +95,7 @@ extension PaywallViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = featuresModel?.getFeatures()[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureCell.identifier, for: indexPath) as? FeatureCell
+        cell?.directionalLayoutMargins = NSDirectionalEdgeInsets()
         cell?.feature = model
         return cell ?? FeatureCell()
     }
