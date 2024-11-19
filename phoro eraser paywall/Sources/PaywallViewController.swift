@@ -52,31 +52,31 @@ private extension PaywallViewController {
         paywallView.tariffsTableView.register(TariffCell.self, forCellReuseIdentifier: TariffCell.identifier)
         paywallView.tariffsTableView.dataSource = self
         paywallView.tariffsTableView.delegate = self
-//        paywallView.tariffsTableView.estimatedRowHeight = 85
-//        paywallView.tariffsTableView.separatorInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//      paywallView.tariffsTableView.estimatedRowHeight = 85
+     //paywallView.tariffsTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 }
 
 extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       tafiffsModel?.buildTariffs().count ?? 0
+       tafiffsModel?.buildTariffs()[section].count ?? 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        tafiffsModel?.buildTariffs().count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = tafiffsModel?.buildTariffs()[indexPath.row]
+        let model = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
         cell?.tariff = model
         return cell ?? TariffCell()
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        60
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
 
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        <#code#>
@@ -90,6 +90,16 @@ extension PaywallViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+       5
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -48,11 +48,11 @@ struct FeatureContent {
 // MARK: Building Model
 
 final class SubscriptionOptions {
-    func buildTariffs() -> [Tariff] {
+    func buildTariffs() -> [[Tariff]] {
         return [
-            Tariff(subscriptionDuration: .trial, price: .week),
-            Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty),
-            Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)
+            [Tariff(subscriptionDuration: .trial, price: .week)],
+            [Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty)],
+            [Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)]
         ]
     }
 }

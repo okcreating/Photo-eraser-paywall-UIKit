@@ -30,14 +30,13 @@ class PaywallView: UIView {
 
     var featuresCollection: UICollectionView = {
         let collection = UICollectionView(frame: .infinite, collectionViewLayout: UICollectionViewLayout.init())
-
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
 
     lazy var tariffsTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        let tableView = UITableView(frame: .zero, style: .plain)
+       //tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -91,12 +90,12 @@ class PaywallView: UIView {
             featuresCollection.widthAnchor.constraint(equalTo: self.widthAnchor),
             featuresCollection.heightAnchor.constraint(equalToConstant: 100),
 
-            tariffsTableView.topAnchor.constraint(equalTo: featuresCollection.bottomAnchor, constant: 10),
+            tariffsTableView.topAnchor.constraint(equalTo: featuresCollection.bottomAnchor),
 //            tariffsTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 //            tariffsTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             tariffsTableView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             tariffsTableView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            tariffsTableView.heightAnchor.constraint(equalToConstant: 200),
+            tariffsTableView.heightAnchor.constraint(equalToConstant: 250),
 
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 10),
             buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
