@@ -23,8 +23,10 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         tafiffsModel = SubscriptionOptions()
         featuresModel = Features()
+
         configureAdvantagesCollection()
         configureTariffsTableView()
+        setBackgroundImage()
     }
 
 //    private func changeBuyButtonText() -> String {
@@ -33,6 +35,14 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 
     @objc
     func buyButtonPressed() {}
+
+    private func setBackgroundImage() {
+
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "back")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
 }
 
 private extension PaywallViewController {

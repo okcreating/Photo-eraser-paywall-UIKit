@@ -58,6 +58,7 @@ final class TariffCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
         setupView()
         
         //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
@@ -107,9 +108,10 @@ final class TariffCell: UITableViewCell {
     }
 
     private func setupView() {
-        //selectionStyle = .none
+        
+        contentView.layer.cornerRadius = 10
         contentView.backgroundColor = !isSelected ? .systemPurple : .systemPink
         durationLabel.textColor = !isSelected ? .black : .white
-        contentView.layer.cornerRadius = 10
+
     }
 }

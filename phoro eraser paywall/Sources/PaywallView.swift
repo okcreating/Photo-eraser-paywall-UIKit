@@ -30,6 +30,7 @@ class PaywallView: UIView {
 
     var featuresCollection: UICollectionView = {
         let collection = UICollectionView(frame: .infinite, collectionViewLayout: UICollectionViewLayout.init())
+        collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -37,6 +38,7 @@ class PaywallView: UIView {
     lazy var tariffsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
        //tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -56,7 +58,7 @@ class PaywallView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-       //backgroundColor = UIColor(patternImage: UIImage(named: "back") ?? )
+      
         setupHierarchy()
         setupLayout()
     }
