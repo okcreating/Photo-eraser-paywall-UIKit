@@ -41,10 +41,10 @@ final class TariffCell: UITableViewCell {
 //    private var savingLabel: UILabel = {
 //        let label = UILabel()
 //        label.textAlignment = .center
-//        //label.layer.frame = CGRect(x: 0, y: 0, width: label.frame.width + 10, height: label.frame.height + 10)
+        //label.layer.frame = CGRect(x: 0, y: 0, width: label.frame.width + 10, height: label.frame.height + 10)
 //        label.layer.cornerRadius = 10
 //
-////label.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//label.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 //        label.layer.backgroundColor = UIColor.red.cgColor
 //        label.translatesAutoresizingMaskIntoConstraints = false
 //        return label
@@ -52,6 +52,9 @@ final class TariffCell: UITableViewCell {
 
     private var savingLabel: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -72,8 +75,6 @@ final class TariffCell: UITableViewCell {
         backgroundColor = .systemPurple
         //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0))
         layer.cornerRadius = 10
-
-
         setupHierarchy()
         setupLayout()
        // setupView()
@@ -86,7 +87,6 @@ final class TariffCell: UITableViewCell {
     // MARK: Setups
 
     private func setupHierarchy() {
-
         durationPriceStack.addSubview(priceLabel)
         durationPriceStack.addSubview(durationLabel)
         addSubview(durationPriceStack)
@@ -110,18 +110,15 @@ final class TariffCell: UITableViewCell {
 
             savingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             savingLabel.leadingAnchor.constraint(equalTo: durationPriceStack.trailingAnchor, constant: 15),
-           // savingLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
-           // savingLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -7),
-            savingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-           // savingLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width / 3.5)
+//            savingLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
+//            savingLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -7),
+          savingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             ])
     }
 
     private func setupView() {
-        
         contentView.layer.cornerRadius = 10
         contentView.backgroundColor = !isSelected ? .systemPurple : .systemPink
         durationLabel.textColor = !isSelected ? .black : .white
-
     }
 }

@@ -23,15 +23,10 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         tafiffsModel = SubscriptionOptions()
         featuresModel = Features()
-
         configureAdvantagesCollection()
         configureTariffsTableView()
         setBackgroundImage()
     }
-
-//    private func changeBuyButtonText() -> String {
-//        
-//    }
 
     @objc
     func buyButtonPressed() {}
