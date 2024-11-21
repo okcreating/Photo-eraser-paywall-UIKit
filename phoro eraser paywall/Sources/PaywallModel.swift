@@ -21,9 +21,14 @@ enum Prices: String {
     case year = "$59,99 per year"
 }
 
-enum SavingPercentage: String {
-    case forty = "save 40%"
-    case seventy = "save 70%"
+//enum SavingPercentage: String {
+//    case forty = "save 40%"
+//    case seventy = "save 70%"
+//}
+
+enum SavingImages: String {
+    case forty = "Save40"
+    case seventy = "Save70"
 }
 
 enum Feature: String {
@@ -38,7 +43,8 @@ enum Feature: String {
 struct Tariff {
     var subscriptionDuration: SubscriptionDurations
     var price: Prices
-    var savingPercentage: SavingPercentage?
+    //var savingPercentage: SavingPercentage?
+    var saving: SavingImages?
 }
 
 struct FeatureContent {
@@ -50,9 +56,12 @@ struct FeatureContent {
 final class SubscriptionOptions {
     func buildTariffs() -> [[Tariff]] {
         return [
+//            [Tariff(subscriptionDuration: .trial, price: .week)],
+//            [Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty)],
+//            [Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)]
             [Tariff(subscriptionDuration: .trial, price: .week)],
-            [Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty)],
-            [Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)]
+            [Tariff(subscriptionDuration: .month, price: .month, saving: .forty)],
+            [Tariff(subscriptionDuration: .year, price: .year, saving: .seventy)]
         ]
     }
 }
