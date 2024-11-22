@@ -18,12 +18,17 @@ enum SubscriptionDurations: String {
 enum Prices: String {
     case week = "$4,99 per week"
     case month = "$12,99 per month"
-    case year = "£59,99 per year"
+    case year = "$59,99 per year"
 }
 
-enum SavingPercentage: String {
-    case forty = "save 40%"
-    case seventy = "save 70%"
+//enum SavingPercentage: String {
+//    case forty = "save 40%"
+//    case seventy = "save 70%"
+//}
+
+enum SavingImages: String {
+    case forty = "Save40"
+    case seventy = "Save70"
 }
 
 enum Feature: String {
@@ -33,12 +38,13 @@ enum Feature: String {
     case noAds = "No ads"
 }
 
-// MARK: Model
+// MARK: Models
 
 struct Tariff {
     var subscriptionDuration: SubscriptionDurations
     var price: Prices
-    var savingPercentage: SavingPercentage?
+    //var savingPercentage: SavingPercentage?
+    var saving: SavingImages?
 }
 
 struct FeatureContent {
@@ -48,21 +54,25 @@ struct FeatureContent {
 // MARK: Building Model
 
 final class SubscriptionOptions {
-    func buildTariffs() -> [Tariff] {
+    func buildTariffs() -> [[Tariff]] {
         return [
-            Tariff(subscriptionDuration: .trial, price: .week),
-            Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty),
-            Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)
+//            [Tariff(subscriptionDuration: .trial, price: .week)],
+//            [Tariff(subscriptionDuration: .month, price: .month, savingPercentage: .forty)],
+//            [Tariff(subscriptionDuration: .year, price: .year, savingPercentage: .seventy)]
+            [Tariff(subscriptionDuration: .trial, price: .week)],
+            [Tariff(subscriptionDuration: .month, price: .month, saving: .forty)],
+            [Tariff(subscriptionDuration: .year, price: .year, saving: .seventy)]
         ]
     }
 }
 
 final class Features {
     func getFeatures() -> [FeatureContent] {
-        return [FeatureContent(text: .removeObjects),
-                FeatureContent(text: .resizePhoto),
-                FeatureContent(text: .eraseObjects),
-                FeatureContent(text: .noAds)
+        return [
+            FeatureContent(text: .removeObjects),
+            FeatureContent(text: .resizePhoto),
+            FeatureContent(text: .eraseObjects),
+            FeatureContent(text: .noAds)
         ]
     }
 }
