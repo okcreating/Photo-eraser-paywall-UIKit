@@ -37,7 +37,6 @@ class PaywallView: UIView {
 
     lazy var tariffsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
-       //tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
