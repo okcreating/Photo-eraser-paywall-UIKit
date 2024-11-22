@@ -74,9 +74,12 @@ final class TariffCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .systemPurple
-        //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0))
+        backgroundColor = UIColor.init(hex: "#624CE6")
         layer.cornerRadius = 10
+        contentView.layer.opacity = 0.47
+        //(red: 98, green: 76, blue: 230, alpha: 0.47)
+        //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0))
+
         setupHierarchy()
         setupLayout()
       // setupView()

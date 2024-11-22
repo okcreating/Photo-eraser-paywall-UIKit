@@ -15,6 +15,7 @@
 		C64539462CE4CF5E0080492C /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64539452CE4CF5E0080492C /* PaywallViewController.swift */; };
 		C645394B2CE4CF5F0080492C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C645394A2CE4CF5F0080492C /* Assets.xcassets */; };
 		C645394E2CE4CF5F0080492C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C645394D2CE4CF5F0080492C /* Base */; };
+		C6471B062CF0D3960045E4B4 /* UIColor hex extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6471B052CF0D3960045E4B4 /* UIColor hex extension.swift */; };
 		C6505CD12CE766D500548207 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6505CD02CE766D500548207 /* FeatureCell.swift */; };
 		C658C1B42CEFEBB60031F185 /* Urbanist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C658C1AB2CEFEBB60031F185 /* Urbanist-Bold.ttf */; };
 		C658C1B52CEFEBB60031F185 /* Urbanist-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C658C1AC2CEFEBB60031F185 /* Urbanist-Light.ttf */; };
@@ -35,6 +36,7 @@
 		C645394A2CE4CF5F0080492C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C645394D2CE4CF5F0080492C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C645394F2CE4CF5F0080492C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6471B052CF0D3960045E4B4 /* UIColor hex extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor hex extension.swift"; sourceTree = "<group>"; };
 		C6505CD02CE766D500548207 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
 		C658C1AB2CEFEBB60031F185 /* Urbanist-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Bold.ttf"; sourceTree = "<group>"; };
 		C658C1AC2CEFEBB60031F185 /* Urbanist-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Light.ttf"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				C641109B2CE51C0A0058D224 /* PaywallModel.swift */,
 				C641109D2CE51C160058D224 /* PaywallView.swift */,
 				C64539452CE4CF5E0080492C /* PaywallViewController.swift */,
+				C6471B042CF0D3730045E4B4 /* Extensions */,
 				C6508F602CE7C3C400CE282B /* Cells */,
 			);
 			path = Sources;
@@ -110,6 +113,14 @@
 				C645394F2CE4CF5F0080492C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6471B042CF0D3730045E4B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6471B052CF0D3960045E4B4 /* UIColor hex extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C6508F602CE7C3C400CE282B /* Cells */ = {
@@ -231,6 +242,7 @@
 				C641109C2CE51C0A0058D224 /* PaywallModel.swift in Sources */,
 				C641109E2CE51C160058D224 /* PaywallView.swift in Sources */,
 				C64539422CE4CF5E0080492C /* AppDelegate.swift in Sources */,
+				C6471B062CF0D3960045E4B4 /* UIColor hex extension.swift in Sources */,
 				C64539442CE4CF5E0080492C /* SceneDelegate.swift in Sources */,
 				C64110A02CE534E40058D224 /* TariffOptionCelll.swift in Sources */,
 			);
