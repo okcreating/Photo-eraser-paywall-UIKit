@@ -53,8 +53,8 @@ final class TariffCell: UITableViewCell {
     private var savingLabel: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.clipsToBounds = true
-        image.layer.masksToBounds = true
+//        image.clipsToBounds = true
+//        image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -63,7 +63,9 @@ final class TariffCell: UITableViewCell {
         let stack = UIStackView()
         stack.alignment = .leading
         stack.axis = .vertical
-        stack.distribution = .equalSpacing
+        stack.distribution = .fillEqually
+//        stack.clipsToBounds = true
+//        stack.layer.masksToBounds = true
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -77,7 +79,7 @@ final class TariffCell: UITableViewCell {
         layer.cornerRadius = 10
         setupHierarchy()
         setupLayout()
-       // setupView()
+      // setupView()
     }
 
     required init?(coder: NSCoder) {
@@ -97,22 +99,22 @@ final class TariffCell: UITableViewCell {
         NSLayoutConstraint.activate([
             durationPriceStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             durationPriceStack.topAnchor.constraint(equalTo: contentView.topAnchor),
-            durationLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-           // durationPriceStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//            durationPriceStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+           durationPriceStack.heightAnchor.constraint(equalToConstant: 60),
             durationPriceStack.widthAnchor.constraint(equalToConstant: 200),
 
             durationLabel.leadingAnchor.constraint(equalTo: durationPriceStack.leadingAnchor),
-            durationLabel.topAnchor.constraint(equalTo: durationPriceStack.topAnchor),
+            durationLabel.topAnchor.constraint(equalTo: durationPriceStack.topAnchor, constant: 3),
 
             priceLabel.leadingAnchor.constraint(equalTo: durationPriceStack.leadingAnchor),
             priceLabel.topAnchor.constraint(equalTo: durationLabel.bottomAnchor, constant: 4),
-            //priceLabel.bottomAnchor.constraint(equalTo: durationPriceStack.bottomAnchor),
+            priceLabel.bottomAnchor.constraint(equalTo: durationPriceStack.bottomAnchor, constant: -3),
 
-            savingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            savingLabel.leadingAnchor.constraint(equalTo: durationPriceStack.trailingAnchor, constant: 15),
+          // savingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
+            savingLabel.leadingAnchor.constraint(equalTo: durationPriceStack.trailingAnchor, constant: 25),
 //            savingLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
 //            savingLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -7),
-          savingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+         savingLabel.centerYAnchor.constraint(equalTo: durationPriceStack.centerYAnchor),
             ])
     }
 
