@@ -25,7 +25,8 @@ final class TariffCell: UITableViewCell {
     private var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+       // label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,7 +34,7 @@ final class TariffCell: UITableViewCell {
     private var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

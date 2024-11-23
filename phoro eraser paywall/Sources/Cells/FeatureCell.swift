@@ -30,7 +30,7 @@ final class FeatureCell: UICollectionViewCell {
     private var advantageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = UIFont(name: "Poppins-Medium", size: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

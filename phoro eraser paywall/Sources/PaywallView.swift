@@ -23,7 +23,7 @@ class PaywallView: UIView {
         let label = UILabel()
         label.text = "Unlock all features"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont(name: "Poppins-SemiBold", size: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +48,7 @@ class PaywallView: UIView {
         button.tintColor = .white
         button.backgroundColor = UIColor.init(hex: "#624CE6")
         button.setTitle("Try Free", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        button.titleLabel?.font = UIFont(name: "Urbanist-Bold", size: 18)
         button.addTarget(self, action: #selector(PaywallViewController.buyButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
