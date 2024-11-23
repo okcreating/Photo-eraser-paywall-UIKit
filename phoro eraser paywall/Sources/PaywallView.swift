@@ -11,6 +11,8 @@ class PaywallView: UIView {
 
     // MARK: - Outlets
 
+    let buttonColor: UIColor = UIColor(red: 0.483, green: 0.483, blue: 0.483, alpha: 1)
+
     lazy var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Paywall Image")
@@ -54,6 +56,37 @@ class PaywallView: UIView {
         return button
     }()
 
+    private lazy var termsOfUseButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Terms of Use", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      // Установка цвета текста для состояния highlighted (когда кнопка нажата)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
+      button.addTarget(self, action: #selector(termsOfUseButtonTapped), for: .touchUpInside)
+      return button
+    }()
+
+    private lazy var restoreButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Restore", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
+      button.addTarget(self, action: #selector(restoreButtonTapped), for: .touchUpInside)
+      return button
+    }()
+
+    private lazy var privacyPolicyButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Privacy Policy", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
+      button.addTarget(self, action: #selector(privacyPolicyButtonTapped), for: .touchUpInside)
+      return button
+    }()
+
     // MARK: - Initializers
 
     override init(frame: CGRect) {
@@ -69,11 +102,8 @@ class PaywallView: UIView {
     // MARK: - Setups
 
     private func setupHierarchy() {
-        addSubview(image)
-        addSubview(title)
-        addSubview(featuresCollection)
-        addSubview(tariffsTableView)
-        addSubview(buyButton)
+        let subviews = [image, title, featuresCollection, tariffsTableView, buyButton]
+        subviews.forEach(addSubview(_:))
     }
 
     private func setupLayout() {
