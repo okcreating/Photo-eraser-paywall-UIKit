@@ -35,7 +35,7 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "back")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+       // backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
 }
