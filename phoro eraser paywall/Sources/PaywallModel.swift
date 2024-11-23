@@ -9,6 +9,11 @@ import Foundation
 
 // MARK: Properties
 
+enum PoliciesLinks: String {
+    case termsOfUse = "https://tasty-mercury-b07.notion.https://tasty-mercury-b07.notion.site/Terms-and-Conditions-The-remove-objects-eraser-app-f6c71fd814bd4902bd8b814c3f0efb4d?pvs=4"
+    case privacyPolicy = "https://tasty-mercury-b07.notion.site/The-remove-objects-eraser-app-APP-PRIVACY-POLICY-17b35454f01745ad8b2eb50ff74862fd?pvs=4"
+}
+
 enum SubscriptionDurations: String {
     case trial = "3 day free trial"
     case month = "Monthly"

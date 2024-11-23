@@ -31,6 +31,40 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
     @objc
     func buyButtonPressed() {}
 
+    @objc
+    func termsOfUseButtonTapped() {
+        if let url = URL(string: PoliciesLinks.termsOfUse.rawValue), UIApplication.shared.canOpenURL(url) {
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+          print("Invalid URL or unable to open.")
+        }
+    }
+
+    @objc
+    func restoreButtonTapped() {
+//        progressHUD?.show()
+//        PurchaisesManager.shared.restore {  [weak self] isSubscribed in
+//            guard let self = self else {return}
+//            DispatchQueue.main.async {
+//                self.progressHUD?.hide()
+//                if isSubscribed {
+//                    self.presenter?.coordinator?.routeToMainController()
+//                } else {
+//                   self.presenter?.coordinator?.showAlertWith(title: "Error occurred", message: "Please try again")
+//                }
+//            }
+//        }
+    }
+
+    @objc
+    func privacyPolicyButtonTapped() {
+        if let url = URL(string: PoliciesLinks.privacyPolicy.rawValue), UIApplication.shared.canOpenURL(url) {
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+          print("Invalid URL or unable to open.")
+        }
+    }
+
     private func setBackgroundImage() {
 
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)

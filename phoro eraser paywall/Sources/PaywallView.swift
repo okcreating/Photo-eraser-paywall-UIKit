@@ -63,7 +63,7 @@ class PaywallView: UIView {
       // Установка цвета текста для состояния highlighted (когда кнопка нажата)
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
-      button.addTarget(self, action: #selector(termsOfUseButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(PaywallViewController.termsOfUseButtonTapped), for: .touchUpInside)
       return button
     }()
 
@@ -73,7 +73,7 @@ class PaywallView: UIView {
       button.setTitleColor(buttonColor, for: .normal)
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
-      button.addTarget(self, action: #selector(restoreButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(PaywallViewController.restoreButtonTapped), for: .touchUpInside)
       return button
     }()
 
@@ -83,7 +83,7 @@ class PaywallView: UIView {
       button.setTitleColor(buttonColor, for: .normal)
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
-      button.addTarget(self, action: #selector(privacyPolicyButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
       return button
     }()
 
@@ -102,8 +102,8 @@ class PaywallView: UIView {
     // MARK: - Setups
 
     private func setupHierarchy() {
-        let subviews = [image, title, featuresCollection, tariffsTableView, buyButton]
-        subviews.forEach(addSubview(_:))
+        let subviews = [image, title, featuresCollection, tariffsTableView, buyButton, termsOfUseButton, restoreButton, privacyPolicyButton]
+        subviews.forEach(addSubview)
     }
 
     private func setupLayout() {
@@ -131,7 +131,16 @@ class PaywallView: UIView {
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 20),
             buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buyButton.widthAnchor.constraint(equalToConstant: 270),
-            buyButton.heightAnchor.constraint(equalToConstant: 55)
+            buyButton.heightAnchor.constraint(equalToConstant: 55),
+
+            restoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            restoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+
+            privacyPolicyButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 15),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: 15),
+
+            termsOfUseButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 15),
+            termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 15)
         ])
     }
 }
