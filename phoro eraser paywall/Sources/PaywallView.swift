@@ -138,10 +138,10 @@ class PaywallView: UIView {
 
             restoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             restoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            restoreButton.widthAnchor.constraint(equalToConstant: 25),
+            //restoreButton.widthAnchor.constraint(equalToConstant: 25),
 
             privacyPolicyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
-            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: 15),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: -15),
 
             termsOfUseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 15)
