@@ -11,6 +11,8 @@ class PaywallView: UIView {
 
     // MARK: - Outlets
 
+    let buttonColor: UIColor = UIColor(red: 0.483, green: 0.483, blue: 0.483, alpha: 1)
+
     lazy var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Paywall Image")
@@ -54,6 +56,40 @@ class PaywallView: UIView {
         return button
     }()
 
+    private lazy var termsOfUseButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Terms", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      // Установка цвета текста для состояния highlighted (когда кнопка нажата)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.addTarget(self, action: #selector(PaywallViewController.termsOfUseButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+      return button
+    }()
+
+    private lazy var restoreButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Restore", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.addTarget(self, action: #selector(PaywallViewController.restoreButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+      return button
+    }()
+
+    private lazy var privacyPolicyButton: UIButton = {
+      let button = UIButton()
+      button.setTitle("Privacy", for: .normal)
+      button.setTitleColor(buttonColor, for: .normal)
+      button.setTitleColor(buttonColor, for: .highlighted)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+    button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+      return button
+    }()
+
     // MARK: - Initializers
 
     override init(frame: CGRect) {
@@ -69,11 +105,8 @@ class PaywallView: UIView {
     // MARK: - Setups
 
     private func setupHierarchy() {
-        addSubview(image)
-        addSubview(title)
-        addSubview(featuresCollection)
-        addSubview(tariffsTableView)
-        addSubview(buyButton)
+        let subviews = [image, title, featuresCollection, tariffsTableView, buyButton, termsOfUseButton, restoreButton, privacyPolicyButton]
+        subviews.forEach(addSubview)
     }
 
     private func setupLayout() {
@@ -101,7 +134,16 @@ class PaywallView: UIView {
             buyButton.topAnchor.constraint(equalTo: tariffsTableView.bottomAnchor, constant: 20),
             buyButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buyButton.widthAnchor.constraint(equalToConstant: 270),
-            buyButton.heightAnchor.constraint(equalToConstant: 55)
+            buyButton.heightAnchor.constraint(equalToConstant: 55),
+
+            restoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            restoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+
+            privacyPolicyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: -35),
+
+            termsOfUseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 35)
         ])
     }
 }
