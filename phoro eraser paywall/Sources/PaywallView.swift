@@ -64,6 +64,7 @@ class PaywallView: UIView {
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
         button.addTarget(self, action: #selector(PaywallViewController.termsOfUseButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
       return button
     }()
 
@@ -74,6 +75,7 @@ class PaywallView: UIView {
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
         button.addTarget(self, action: #selector(PaywallViewController.restoreButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
       return button
     }()
 
@@ -84,6 +86,7 @@ class PaywallView: UIView {
       button.setTitleColor(buttonColor, for: .highlighted)
       button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
         button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
       return button
     }()
 
@@ -135,11 +138,12 @@ class PaywallView: UIView {
 
             restoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             restoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            restoreButton.widthAnchor.constraint(equalToConstant: 25),
 
-            privacyPolicyButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 15),
+            privacyPolicyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: 15),
 
-            termsOfUseButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 15),
+            termsOfUseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 15)
         ])
     }
