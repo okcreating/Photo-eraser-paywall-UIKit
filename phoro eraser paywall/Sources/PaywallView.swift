@@ -58,11 +58,11 @@ class PaywallView: UIView {
 
     private lazy var termsOfUseButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Terms of Use", for: .normal)
+      button.setTitle("Terms", for: .normal)
       button.setTitleColor(buttonColor, for: .normal)
       // Установка цвета текста для состояния highlighted (когда кнопка нажата)
       button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
         button.addTarget(self, action: #selector(PaywallViewController.termsOfUseButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
@@ -73,7 +73,7 @@ class PaywallView: UIView {
       button.setTitle("Restore", for: .normal)
       button.setTitleColor(buttonColor, for: .normal)
       button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
         button.addTarget(self, action: #selector(PaywallViewController.restoreButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
@@ -81,11 +81,11 @@ class PaywallView: UIView {
 
     private lazy var privacyPolicyButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Privacy Policy", for: .normal)
+      button.setTitle("Privacy", for: .normal)
       button.setTitleColor(buttonColor, for: .normal)
       button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Urbanist-Light", size: 12)
-        button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
+      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+    button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
     }()
@@ -138,13 +138,12 @@ class PaywallView: UIView {
 
             restoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
             restoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            //restoreButton.widthAnchor.constraint(equalToConstant: 25),
 
             privacyPolicyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
-            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: -15),
+            privacyPolicyButton.trailingAnchor.constraint(equalTo: restoreButton.leadingAnchor, constant: -35),
 
             termsOfUseButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
-            termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 15)
+            termsOfUseButton.leadingAnchor.constraint(equalTo: restoreButton.trailingAnchor, constant: 35)
         ])
     }
 }
