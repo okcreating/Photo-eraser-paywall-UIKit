@@ -78,8 +78,6 @@ final class TariffCell: UITableViewCell {
         layer.cornerRadius = 10
         clipsToBounds = true
 
-        //(red: 98, green: 76, blue: 230, alpha: 0.47)
-        //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0))
 
         setupHierarchy()
         setupLayout()
@@ -89,6 +87,19 @@ final class TariffCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            self.durationLabel.textColor = .white
+            self.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+            backgroundColor = UIColor.init(hex: "#FF0080")
+        } else {
+            self.durationLabel.textColor = .black
+            self.priceLabel.textColor = .white
+            backgroundColor = UIColor.init(hex: "#624CE6")
+        }
+     }
 
     // MARK: Setups
 

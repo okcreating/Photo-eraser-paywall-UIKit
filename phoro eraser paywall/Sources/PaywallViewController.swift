@@ -66,7 +66,6 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
     }
 
     private func setBackgroundImage() {
-
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "back")
        // backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -109,26 +108,24 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
         cell?.tariff = model
 
-        switch indexPath.section {
-        case 0:
-            cell?.setSelected(true, animated: false)
-        default:
-            break
-        }
-        if (cell?.isSelected) == true {
-            cell?.durationLabel.textColor = .white
-            cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
-            cell?.backgroundColor = UIColor.init(hex: "#FF0080")
-        } else {
-            cell?.durationLabel.textColor = .black
-            cell?.priceLabel.textColor = .white
-            cell?.backgroundColor = UIColor.init(hex: "#624CE6")
-        }
-        return cell ?? TariffCell()
+//        if (cell?.isSelected) == true {
+//            cell?.durationLabel.textColor = .white
+//            cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+//            cell?.backgroundColor = UIColor.init(hex: "#FF0080")
+//        } else {
+//            cell?.durationLabel.textColor = .black
+//            cell?.priceLabel.textColor = .white
+//            cell?.backgroundColor = UIColor.init(hex: "#624CE6")
+//        }
+       return cell ?? TariffCell()
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
+       // let cell = cell as! TariffCell
+       // tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.section == 0 {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -137,9 +134,10 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? TariffCell
-        cell?.durationLabel.textColor = .white
-        cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
-        cell?.backgroundColor = UIColor.init(hex: "#FF0080")
+        cell?.setSelected(true, animated: true)
+//        cell?.durationLabel.textColor = .white
+//        cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+//        cell?.backgroundColor = UIColor.init(hex: "#FF0080")
 
         switch indexPath.section {
         case 0:
@@ -149,16 +147,19 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             break
         }
-
-        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+       // tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+       // tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
-        cell?.durationLabel.textColor = .black
-        cell?.priceLabel.textColor = .white
-        cell?.backgroundColor = UIColor.init(hex: "#624CE6")
-        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+   //tableView.deselectRow(at: indexPath, animated: true)
+//        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
+//        cell?.setSelected(false, animated: true)
+//        cell?.durationLabel.textColor = .black
+//        cell?.priceLabel.textColor = .white
+//        cell?.backgroundColor = UIColor.init(hex: "#624CE6")
+//       tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+//        tableView.reloadData()
     }
 }
 
