@@ -106,18 +106,39 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
-        cell?.tariff = model
-        return cell ?? TariffCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as! TariffCell
+        cell.tariff = model
+
+        switch indexPath.section {
+        case 0:
+            cell.setSelected(true, animated: false)
+        default:
+            break
+        }
+        if cell.isSelected {
+            cell.durationLabel.textColor = .white
+            cell.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+            cell.backgroundColor = UIColor.init(hex: "#FF0080")
+        } else {
+            cell.durationLabel.textColor = .black
+            cell.priceLabel.textColor = .white
+            cell.backgroundColor = UIColor.init(hex: "#624CE6")
+        }
+        return cell //?? TariffCell()
     }
-//
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                let path = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
+
+
+    }
 }
 
 extension PaywallViewController: UICollectionViewDataSource {

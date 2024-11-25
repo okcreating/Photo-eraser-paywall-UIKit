@@ -11,8 +11,6 @@ class PaywallView: UIView {
 
     // MARK: - Outlets
 
-    let buttonColor: UIColor = UIColor(red: 0.483, green: 0.483, blue: 0.483, alpha: 1)
-
     lazy var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Paywall Image")
@@ -58,11 +56,9 @@ class PaywallView: UIView {
 
     private lazy var termsOfUseButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Terms", for: .normal)
-      button.setTitleColor(buttonColor, for: .normal)
-      // Установка цвета текста для состояния highlighted (когда кнопка нажата)
-      button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.setTitle("Terms", for: .normal)
+        button.setTitleColor(UIColor(hex: "A4A5AD"), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
         button.addTarget(self, action: #selector(PaywallViewController.termsOfUseButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
@@ -70,10 +66,9 @@ class PaywallView: UIView {
 
     private lazy var restoreButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Restore", for: .normal)
-      button.setTitleColor(buttonColor, for: .normal)
-      button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.setTitle("Restore", for: .normal)
+        button.setTitleColor(UIColor(hex: "A4A5AD"), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
         button.addTarget(self, action: #selector(PaywallViewController.restoreButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
@@ -81,11 +76,10 @@ class PaywallView: UIView {
 
     private lazy var privacyPolicyButton: UIButton = {
       let button = UIButton()
-      button.setTitle("Privacy", for: .normal)
-      button.setTitleColor(buttonColor, for: .normal)
-      button.setTitleColor(buttonColor, for: .highlighted)
-      button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
-    button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
+        button.setTitle("Privacy", for: .normal)
+        button.setTitleColor(UIColor(hex: "A4A5AD"), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.addTarget(self, action: #selector(PaywallViewController.privacyPolicyButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
       return button
     }()

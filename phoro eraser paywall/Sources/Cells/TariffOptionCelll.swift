@@ -22,16 +22,15 @@ final class TariffCell: UITableViewCell {
 
     // MARK: Outlets
 
-    private var durationLabel: UILabel = {
+    var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-       // label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.font = UIFont(name: "Poppins-SemiBold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private var priceLabel: UILabel = {
+   var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "Poppins-SemiBold", size: 18)
