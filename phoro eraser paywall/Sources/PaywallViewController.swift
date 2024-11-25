@@ -33,11 +33,11 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 
     @objc
     func termsOfUseButtonTapped() {
-        if let url = URL(string: PoliciesLinks.termsOfUse.rawValue), UIApplication.shared.canOpenURL(url) {
-          UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-          print("Invalid URL or unable to open.")
-        }
+//        if let url = URL(string: PoliciesLinks.termsOfUse.rawValue), UIApplication.shared.canOpenURL(url) {
+//          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        } else {
+//          print("Invalid URL or unable to open.")
+//        }
     }
 
     @objc
@@ -58,15 +58,14 @@ class PaywallViewController: UIViewController, UICollectionViewDelegate {
 
     @objc
     func privacyPolicyButtonTapped() {
-        if let url = URL(string: PoliciesLinks.privacyPolicy.rawValue), UIApplication.shared.canOpenURL(url) {
-          UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-          print("Invalid URL or unable to open.")
-        }
+//        if let url = URL(string: PoliciesLinks.privacyPolicy.rawValue), UIApplication.shared.canOpenURL(url) {
+//          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        } else {
+//          print("Invalid URL or unable to open.")
+//        }
     }
 
     private func setBackgroundImage() {
-
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "back")
        // backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -97,7 +96,7 @@ private extension PaywallViewController {
 extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       tafiffsModel?.buildTariffs()[section].count ?? 0
+        tafiffsModel?.buildTariffs()[section].count ?? 0
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,16 +107,35 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
         let model = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
         cell?.tariff = model
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.init(hex: "#FF0080")
+        cell?.selectedBackgroundView = bgColorView
+
+        cell?.durationLabel.highlightedTextColor = .white
+        cell?.priceLabel.highlightedTextColor = UIColor.init(hex: "#624CE6")
         return cell ?? TariffCell()
     }
-//
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            paywallView.buyButton.setTitle("Try Free", for: .normal)
+        case 1, 2:
+            paywallView.buyButton.setTitle("Buy Subscription", for: .normal)
+        default:
+            break
+        }
+    }
 }
 
 extension PaywallViewController: UICollectionViewDataSource {

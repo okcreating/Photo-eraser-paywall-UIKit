@@ -22,16 +22,15 @@ final class TariffCell: UITableViewCell {
 
     // MARK: Outlets
 
-    private var durationLabel: UILabel = {
+    var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-       // label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.font = UIFont(name: "Poppins-SemiBold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private var priceLabel: UILabel = {
+   var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "Poppins-SemiBold", size: 18)
@@ -78,13 +77,8 @@ final class TariffCell: UITableViewCell {
         backgroundColor = UIColor.init(hex: "#624CE6", alpha: 0.47)
         layer.cornerRadius = 10
         clipsToBounds = true
-
-        //(red: 98, green: 76, blue: 230, alpha: 0.47)
-        //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0))
-
         setupHierarchy()
         setupLayout()
-      // setupView()
     }
 
     required init?(coder: NSCoder) {
@@ -121,11 +115,5 @@ final class TariffCell: UITableViewCell {
 //            savingLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -7),
          savingLabel.centerYAnchor.constraint(equalTo: durationPriceStack.centerYAnchor),
             ])
-    }
-
-    private func setupView() {
-        contentView.layer.cornerRadius = 10
-        contentView.backgroundColor = !isSelected ? .systemPurple : .systemPink
-        durationLabel.textColor = !isSelected ? .black : .white
     }
 }
