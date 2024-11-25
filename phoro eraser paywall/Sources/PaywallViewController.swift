@@ -107,21 +107,26 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
         let model = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
         cell?.tariff = model
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.init(hex: "#FF0080")
+        cell?.selectedBackgroundView = bgColorView
 
-//        if (cell?.isSelected) == true {
-//            cell?.durationLabel.textColor = .white
-//            cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
-//            cell?.backgroundColor = UIColor.init(hex: "#FF0080")
-//        } else {
-//            cell?.durationLabel.textColor = .black
-//            cell?.priceLabel.textColor = .white
-//            cell?.backgroundColor = UIColor.init(hex: "#624CE6")
+            cell?.durationLabel.textColor = .white
+            cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+       // } else {
+   //         cell?.durationLabel.textColor = .black
+  //          cell?.priceLabel.textColor = .white
+ //           cell?.backgroundColor = UIColor.init(hex: "#624CE6")
 //        }
        return cell ?? TariffCell()
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-       // let cell = cell as! TariffCell
+       let cell = cell as? TariffCell
+
+//        cell?.durationLabel.textColor = .white
+//              cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+//             cell?.backgroundColor = UIColor.init(hex: "#FF0080")
        // tableView.deselectRow(at: indexPath, animated: false)
         if indexPath.section == 0 {
             tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
@@ -133,8 +138,8 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
-        cell?.setSelected(true, animated: true)
+//        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
+    //    cell?.setSelected(true, animated: true)
 //        cell?.durationLabel.textColor = .white
 //        cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
 //        cell?.backgroundColor = UIColor.init(hex: "#FF0080")
