@@ -106,28 +106,29 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as! TariffCell
-        cell.tariff = model
+        let cell = tableView.dequeueReusableCell(withIdentifier: TariffCell.identifier, for: indexPath) as? TariffCell
+        cell?.tariff = model
 
         switch indexPath.section {
         case 0:
-            cell.setSelected(true, animated: false)
+            cell?.setSelected(true, animated: false)
         default:
             break
         }
-        if cell.isSelected {
-            cell.durationLabel.textColor = .white
-            cell.priceLabel.textColor = UIColor.init(hex: "#624CE6")
-            cell.backgroundColor = UIColor.init(hex: "#FF0080")
+        if (cell?.isSelected) == true {
+            cell?.durationLabel.textColor = .white
+            cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+            cell?.backgroundColor = UIColor.init(hex: "#FF0080")
         } else {
-            cell.durationLabel.textColor = .black
-            cell.priceLabel.textColor = .white
-            cell.backgroundColor = UIColor.init(hex: "#624CE6")
+            cell?.durationLabel.textColor = .black
+            cell?.priceLabel.textColor = .white
+            cell?.backgroundColor = UIColor.init(hex: "#624CE6")
         }
-        return cell //?? TariffCell()
+        return cell ?? TariffCell()
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,9 +136,29 @@ extension PaywallViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                let path = tafiffsModel?.buildTariffs()[indexPath.section][indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
+        cell?.durationLabel.textColor = .white
+        cell?.priceLabel.textColor = UIColor.init(hex: "#624CE6")
+        cell?.backgroundColor = UIColor.init(hex: "#FF0080")
 
+        switch indexPath.section {
+        case 0:
+            paywallView.buyButton.setTitle("Try Free", for: .normal)
+        case 1, 2:
+            paywallView.buyButton.setTitle("Buy Subscription", for: .normal)
+        default:
+            break
+        }
 
+        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? TariffCell
+        cell?.durationLabel.textColor = .black
+        cell?.priceLabel.textColor = .white
+        cell?.backgroundColor = UIColor.init(hex: "#624CE6")
+        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
     }
 }
 
